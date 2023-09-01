@@ -103,3 +103,27 @@ console.log(keysAndValues({ a: 'Apple', b: 'Microsoft', c: 'Google' })) // [['a'
 console.log(keysAndValues({ key1: true, key2: false, key3: undefined })) // [['key1', 'key2', 'key3'], [true, false, undefined]]
 
 // Exercise 13
+
+function reverseWords(string) {
+    string.trim();
+    return string.split(' ').reverse().join(' ');
+}
+
+reverseWords('happy to be alive');
+reverseWords('Someday My Prince Will Come');
+reverseWords('Can you hear me now?');
+
+// Exercise 14
+
+// function balancedParentheses(string) {
+
+// }
+
+// Exercise 15
+
+// Exercise 16
+
+// Exercise 17
+
+// Exercise 18
+
