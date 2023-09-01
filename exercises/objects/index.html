@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+
+    <script>
+        let book1 = {
+            title: 'The Wonders of Code',
+            author: 'John Doe',
+            publicationYear: '1999',
+            genre: 'mystery',
+        }
+
+        function addProperty(property, value) {
+            book1[property] = value;
+        }
+
+        function modifyProperty(property, value) {
+            book1[property] = value;
+        }
+
+        function deleteProperty(property) {
+            delete book1[property];
+        }
+
+        console.log(book1);
+        
+        addProperty('pageLength', 242);
+        console.log(book1);
+
+        modifyProperty('pageLength', 142);
+        console.log(book1);
+
+        deleteProperty('pageLength');
+        console.log(book1);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
