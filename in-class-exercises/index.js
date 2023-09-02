@@ -216,6 +216,7 @@ console.groupCollapsed('EXERCISE 14:');
     console.log(balancedParentheses('()[]{}'));  // balanced
     console.log(balancedParentheses('([{}])'));  // balanced
     console.log(balancedParentheses('()[(())]{)}'));  // not balanced
+    console.log(balancedParentheses('][((}'));  // not balanced
 
 console.groupEnd();
 
@@ -224,13 +225,42 @@ console.groupEnd();
 console.groupCollapsed('EXERCISE 15:');
 
     function isAnagram(word1, word2) {
-        let isAnagram = false;
+        word1 = word1.toLowerCase();
+        word2 = word2.toLowerCase();
 
-        return isAnagram;
+        let letterCount1 = countLetters(word1);
+        let letterCount2 = countLetters(word2);
+
+        return areObjectsEqual(letterCount1, letterCount2);
+    }
+
+    function countLetters(word) {
+        return word.split('')  // make a char array
+                   .reduce((letterCount, currentLetter) => {  // accumulator is letterCount, currentValue is currentLetter
+                        letterCount[currentLetter] = (letterCount[currentLetter] || 0) + 1;  // if currentLetter is not a key, initialize at 0 then increment by 1
+                        return letterCount;  // return updated object as result of each iteration { h: 1, e: 1, a: 1, r: 1, t: 1 }
+                    }, {});
+    }
+
+    function areObjectsEqual(object1, object2) {
+        let keys1 = Object.keys(object1);  // store the keys in an array ['h', 'e', 'a', 'r', 't']
+        let keys2 = Object.keys(object2);
+
+        if (keys1.length != keys2.length) {
+            return false;
+        }
+
+        for (let key of keys1) {
+            if (object1[key] != object2[key]) {  // compare letter counts
+                return false;
+            }
+        }
+
+        return true;
     }
 
     console.log(isAnagram('heart', 'earth'));  // true
-    console.log(isAnagram('race', 'care'));  // true
+    console.log(isAnagram('RACE', 'care'));  // true
     console.log(isAnagram('mom', 'dad'));  // false
     console.log(isAnagram('fish', 'water'));  // false
 
