@@ -293,20 +293,23 @@ console.groupEnd();
 console.groupCollapsed('EXERCISE 17:');
 
     function isPalindrome(word) {
-        word = word.toLowerCase();
+        let cleanWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');  // remove punctuation and spaces
         
-        return word == word.split('').reverse().join('');
+        return cleanWord == cleanWord.split('').reverse().join('');
     }
 
     console.log(isPalindrome('racecar'));  // true
     console.log(isPalindrome('Dad'));  // true
     console.log(isPalindrome('banana'));  // false
+    console.log(isPalindrome('A man, a plan, a canal, Panama'));  // true
 
 console.groupEnd();
 
 // Exercise 18
 
 console.groupCollapsed('EXERCISE 18:');
+
+
 
 console.groupEnd();
 
