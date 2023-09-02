@@ -176,8 +176,8 @@ console.groupEnd();
 console.groupCollapsed('EXERCISE 13:');
 
     function reverseWords(string) {
-        string.trim();
-        return string.split(' ').reverse().join(' ');
+        let cleanString = string.toLowerCase().replace(/[^a-zA-Z ]/g, '');
+        return cleanString.split(' ').reverse().join(' ');
     }
 
     console.log(reverseWords('happy to be alive'));
@@ -196,13 +196,13 @@ console.groupCollapsed('EXERCISE 14:');
 
         for (let item of stringArray) {
             if (item == '(' || item == '[' || item == '{') {
-                stack.push(item);
+                stack.push(item);  // add opening parenthesis to stack
             } else if (item == ')' || item == ']' || item == '}') {
                 if (stack.length == 0) {
-                    return 'not balanced';
+                    return 'not balanced';  // can't start with a closing parenthesis
                 }
 
-                let topItem = stack.pop();
+                let topItem = stack.pop();  // top opening parenthesis to compare below
 
                 if ((item == ')' && topItem != '(') || (item == ']' && topItem != '[') || (item == '}' && topItem != '{')) {
                     return 'not balanced';
@@ -210,7 +210,7 @@ console.groupCollapsed('EXERCISE 14:');
             }
         }
 
-        return stack.length == 0 ? 'balanced' : 'not balanced';
+        return stack.length == 0 ? 'balanced' : 'not balanced';  // single remaining parenthesis would not be balanced
     }
 
     console.log(balancedParentheses('()[]{}'));  // balanced
@@ -293,7 +293,7 @@ console.groupEnd();
 console.groupCollapsed('EXERCISE 17:');
 
     function isPalindrome(word) {
-        let cleanWord = word.toLowerCase().replace(/[^a-z0-9]/g, '');  // remove punctuation and spaces
+        let cleanWord = word.toLowerCase().replace(/[^a-zA-Z]/g, '');  // remove punctuation and spaces
         
         return cleanWord == cleanWord.split('').reverse().join('');
     }
@@ -301,6 +301,7 @@ console.groupCollapsed('EXERCISE 17:');
     console.log(isPalindrome('racecar'));  // true
     console.log(isPalindrome('Dad'));  // true
     console.log(isPalindrome('banana'));  // false
+    console.log(isPalindrome('David'));  // false
     console.log(isPalindrome('A man, a plan, a canal, Panama'));  // true
 
 console.groupEnd();
@@ -309,7 +310,14 @@ console.groupEnd();
 
 console.groupCollapsed('EXERCISE 18:');
 
+    function reverseWords(string) {
+        let cleanString = string.toLowerCase().replace(/[^a-zA-Z ]/g, '');
+        return cleanString.split(' ').reverse().join(' ');
+    }
 
+    console.log(reverseWords('tell me what you want'));
+    console.log(reverseWords('How are you today?'));
+    console.log(reverseWords('Excited, I am!'));
 
 console.groupEnd();
 
