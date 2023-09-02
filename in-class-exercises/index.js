@@ -173,16 +173,16 @@ console.groupEnd();
 
 // Exercise 13
 
-console.groupCollapsed('EXERCISE 13');
+console.groupCollapsed('EXERCISE 13:');
 
     function reverseWords(string) {
         string.trim();
         return string.split(' ').reverse().join(' ');
     }
 
-    reverseWords('happy to be alive');
-    reverseWords('Someday My Prince Will Come');
-    reverseWords('Can you hear me now?');
+    console.log(reverseWords('happy to be alive'));
+    console.log(reverseWords('Someday My Prince Will Come'));
+    console.log(reverseWords('Can you hear me now?'));
 
 console.groupEnd();
 
