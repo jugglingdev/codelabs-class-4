@@ -188,51 +188,85 @@ console.groupEnd();
 
 // Exercise 14
 
-function balancedParentheses(string) {
-    let stack = [];
-    let stringArray = string.split('');
+console.groupCollapsed('EXERCISE 14:');
 
-    for (let item in stringArray) {
-        if (item == '(' || item == '[' || item == '{') {
-            stack.push(item);
-        } else if (item == ')' || item == ']' || item == '}') {
-            if (stack.length == 0) {
-                return 'not balanced';
-            }
+    function balancedParentheses(string) {
+        let stack = [];
+        let stringArray = string.split('');
 
-            let topItem = stack.pop();
+        for (let item of stringArray) {
+            if (item == '(' || item == '[' || item == '{') {
+                stack.push(item);
+            } else if (item == ')' || item == ']' || item == '}') {
+                if (stack.length == 0) {
+                    return 'not balanced';
+                }
 
-            if ((item == ')' && topItem != '(') || (item == ']' && topItem != '[') || (item == '}' && topItem != '{')) {
-                return 'not balanced';
+                let topItem = stack.pop();
+
+                if ((item == ')' && topItem != '(') || (item == ']' && topItem != '[') || (item == '}' && topItem != '{')) {
+                    return 'not balanced';
+                }
             }
         }
-        return (stack.length == 0) ? 'balanced' : 'not balanced';
-    }
-}
 
-console.log(balancedParentheses('()[]{}'));
-console.log(balancedParentheses('([{}])'));
-console.log(balancedParentheses('()[(())]{)}'));
+        return stack.length == 0 ? 'balanced' : 'not balanced';
+    }
+
+    console.log(balancedParentheses('()[]{}'));  // balanced
+    console.log(balancedParentheses('([{}])'));  // balanced
+    console.log(balancedParentheses('()[(())]{)}'));  // not balanced
+
+console.groupEnd();
 
 // Exercise 15
 
+console.groupCollapsed('EXERCISE 15:');
+
+    function isAnagram(word1, word2) {
+        let isAnagram = false;
+
+        return isAnagram;
+    }
+
+    console.log(isAnagram('heart', 'earth'));  // true
+    console.log(isAnagram('race', 'care'));  // true
+    console.log(isAnagram('mom', 'dad'));  // false
+    console.log(isAnagram('fish', 'water'));  // false
+
+console.groupEnd();
+
 // Exercise 16
 
-function FizzBuzz() {
-    for (let i = 1; i <= 100; i++) {
-        if (i % 3 == 0 && i % 5 == 0) {
-            console.log('FizzBuzz');
-        } else if (i % 3 == 0) {
-            console.log('Fizz');
-        } else if (i % 5 == 0) {
-            console.log('Buzz')
-        } else {
-            console.log(i);
+console.groupCollapsed('EXERCISE 16:');
+
+    function FizzBuzz() {
+        for (let i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                console.log('FizzBuzz');
+            } else if (i % 3 == 0) {
+                console.log('Fizz');
+            } else if (i % 5 == 0) {
+                console.log('Buzz')
+            } else {
+                console.log(i);
+            }
         }
     }
-}
+
+    FizzBuzz();
+
+console.groupEnd();
 
 // Exercise 17
 
+console.groupCollapsed('EXERCISE 17:');
+
+console.groupEnd();
+
 // Exercise 18
+
+console.groupCollapsed('EXERCISE 18:');
+
+console.groupEnd();
 
