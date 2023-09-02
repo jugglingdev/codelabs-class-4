@@ -46,32 +46,32 @@
         console.log(student);
         student.printStudentDetails();
 
-        // // Exercise 5: Advanced Object Methods
+        // Exercise 5: Advanced Object Methods
 
-        // let library = {
-        //     books: [
-        //         'The Lord of the Rings',
-        //         'I Know Why the Caged Bird Sings',
-        //         "The Hitchhiker's Guide to the Galaxy",
-        //     ],
+        let library = {
+            books: [
+                'The Lord of the Rings',
+                'I Know Why the Caged Bird Sings',
+                "The Hitchhiker's Guide to the Galaxy",
+            ],
 
-        //     addBook(bookName) {
-        //         library.books.push(bookName);
-        //     },
+            addBook(bookName) {
+                library.books.push(bookName);
+            },
 
-        //     removeBook(bookName) {
-        //         let index = library.books.indexOf(bookName);
-        //         library.books.splice(index, 1);
-        //     }
-        // }
+            removeBook(bookName) {
+                let index = library.books.indexOf(bookName);
+                library.books.splice(index, 1);
+            }
+        }
 
-        // console.log(library.books);
+        console.log(library.books);
 
-        // library.addBook('Meaningful Work');
-        // console.log(library.books);
+        library.addBook('Meaningful Work');
+        console.log(library.books);
 
-        // library.removeBook('I Know Why the Caged Bird Sings');
-        // console.log(library.books);
+        library.removeBook('I Know Why the Caged Bird Sings');
+        console.log(library.books);
 
     </script>
 </head>
