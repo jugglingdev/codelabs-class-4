@@ -1,124 +1,218 @@
 // Exercise 1
-function greet() {
-    let name = prompt('What is your name?');
-    alert('Hello, ' + name + '!');
-}
 
-greet();
+console.groupCollapsed('EXERCISE 1:');
+console.log('See alerts');
+
+    function greet() {
+        let name = prompt('What is your name?');
+
+        if (name == '' || name == null) {
+            alert('Hi there!');
+        } else {
+            alert('Hello, ' + name + '!');
+        }
+    }
+
+    greet();
+
+console.groupEnd();
 
 // Exercise 2
-function multiply(num1, num2) {
-    console.log(num1 * num2);
-}
 
-multiply(2, 4);
-multiply(6, 3);
-multiply(0, 1);
+console.groupCollapsed('EXERCISE 2:');
+
+    function multiply(num1, num2) {
+        console.log(num1 * num2);
+    }
+
+    multiply(2, 4);
+    multiply(6, 3);
+    multiply(0, 1);
+
+console.groupEnd();
 
 // Exercise 3
-let person = {
-    name: 'Bob',
-    age: '42',
-    gender: 'male',
-};
 
-console.log(person);
+console.groupCollapsed('EXERCISE 3:');
+
+    let person = {
+        name: 'Bob',
+        age: '42',
+        gender: 'male',
+    };
+
+    console.log(person);
+
+console.groupEnd();
 
 // Exercise 4
 
-let car = {
-    make: 'Honda',
-    model: 'Accord',
-    year: 2007,
-};
+console.groupCollapsed('EXERCISE 4:');
 
-console.log(car);
+    let car = {
+        make: 'Honda',
+        model: 'Accord',
+        year: 2007,
+    };
+
+    console.log(car);
+
+console.groupEnd();
 
 // Exercise 5
 
-function reverseString(string) {
-    return string.split('').reverse().join('');
-}
+console.groupCollapsed('EXERCISE 5:');
 
-console.log(reverseString('potato'));
-console.log(reverseString('Alabama'));
+    function reverseString(string) {
+        return string.split('').reverse().join('');
+    }
+
+    console.log(reverseString('potato'));
+    console.log(reverseString('Alabama'));
+
+console.groupEnd();
 
 // Exercise 6
 
-function calculateRadius(r) {
-    let area = Math.pow((Math.PI * r), 2); 
-    return area;
-}
+console.groupCollapsed('EXERCISE 6:');
 
-calculateRadius(4);
+    function calculateRadius(r) {
+        let area = Math.pow((Math.PI * r), 2); 
+        return area;
+    }
+
+    console.log(calculateRadius(4));
+
+console.groupEnd();
 
 // Exercise 7
 
-console.log(new Date());
+console.groupCollapsed('EXERCISE 7:');
+
+    console.log(new Date());
+
+console.groupEnd();
 
 // Exercise 8
 
-console.log(Math.ceil(Math.random() * 10));
+console.groupCollapsed('EXERCISE 8:');
+
+    console.log(Math.ceil(Math.random() * 10));
+
+console.groupEnd();
 
 // Exercise 10
 
-function tellStory(noun) {
-    console.log(`There once was a ${noun}.  The ${noun} was very happy.  The end.`);
-}
+console.groupCollapsed('EXERCISE 10');
 
-tellStory('potato');
+    function tellStory(noun) {
+        console.log(`There once was a ${noun}. The ${noun} was very happy. The end.`);
+    }
+
+    tellStory('potato');
+
+console.groupEnd();
 
 // Exercise 11
 
-let user = {
-    name: 'Billy',
-    age: 42,
-    occupation: 'rock climber',
-}
+console.groupCollapsed('EXERCISE 11:');
+console.log('Click the button');
+console.groupEnd();
 
-function printUserInfo() {
-    for (const property in user) {
-        console.log(`${property}: ${user[property]}`);
+    let user = {
+        name: 'Billy',
+        age: 42,
+        occupation: 'rock climber',
     }
-}
+
+    function printUserInfo() {
+        console.groupCollapsed('EXERCISE 11 CONTINUED:');
+
+        for (const property in user) {
+            console.log(`${property}: ${user[property]}`);
+        }
+
+        console.groupEnd();
+    }
 
 // Exercise 12
 
-function keysAndValues(object) {
-    let keys = [];
-    let values = [];
+console.groupCollapsed('EXERCISE 12:');
 
-    for (const key in object) {
-        keys.push(key);
-        values.push(object[key])
-    };
+    function keysAndValues(object) {
+        const sortedObject = sortKeys(object);
+        return keyAndValueArrays(sortedObject);
+    }
 
-    return { keys, values };
-}
+    function sortKeys(object) {
+        return Object.keys(object)
+            .sort()
+            .reduce((result, key) => {
+                result[key] = object[key];
+                return result;
+            }, {});
+    }
 
-console.log(keysAndValues({ a: 1, b: 2, c: 3 })) // [['a', 'b', 'c'], [1, 2, 3]]
+    function keyAndValueArrays(sortedObject) {
+        let keys = [];
+        let values = [];
 
-console.log(keysAndValues({ a: 'Apple', b: 'Microsoft', c: 'Google' })) // [['a', 'b', 'c'], ['Apple', 'Microsoft, 'Google']]
+        for (const key in sortedObject) {
+            keys.push(key);
+            values.push(sortedObject[key])
+        };
 
-console.log(keysAndValues({ key1: true, key2: false, key3: undefined })) // [['key1', 'key2', 'key3'], [true, false, undefined]]
+        return [keys, values];
+    }
+
+    console.log(keysAndValues({ a: 1, b: 2, c: 3 })) // [['a', 'b', 'c'], [1, 2, 3]]
+    console.log(keysAndValues({ a: 'Apple', c: 'Google', b: 'Microsoft' })) // [['a', 'b', 'c'], ['Apple', 'Microsoft, 'Google']]
+    console.log(keysAndValues({ key3: undefined, key1: true, key2: false  })) // [['key1', 'key2', 'key3'], [true, false, undefined]]
+
+console.groupEnd();
 
 // Exercise 13
 
-function reverseWords(string) {
-    string.trim();
-    return string.split(' ').reverse().join(' ');
-}
+console.groupCollapsed('EXERCISE 13');
 
-reverseWords('happy to be alive');
-reverseWords('Someday My Prince Will Come');
-reverseWords('Can you hear me now?');
+    function reverseWords(string) {
+        string.trim();
+        return string.split(' ').reverse().join(' ');
+    }
+
+    reverseWords('happy to be alive');
+    reverseWords('Someday My Prince Will Come');
+    reverseWords('Can you hear me now?');
+
+console.groupEnd();
 
 // Exercise 14
 
-// function balancedParentheses(string) {
-//     let stack = [];
+function balancedParentheses(string) {
+    let stack = [];
+    let stringArray = string.split('');
 
-// }
+    for (let item in stringArray) {
+        if (item == '(' || item == '[' || item == '{') {
+            stack.push(item);
+        } else if (item == ')' || item == ']' || item == '}') {
+            if (stack.length == 0) {
+                return 'not balanced';
+            }
+
+            let topItem = stack.pop();
+
+            if ((item == ')' && topItem != '(') || (item == ']' && topItem != '[') || (item == '}' && topItem != '{')) {
+                return 'not balanced';
+            }
+        }
+        return (stack.length == 0) ? 'balanced' : 'not balanced';
+    }
+}
+
+console.log(balancedParentheses('()[]{}'));
+console.log(balancedParentheses('([{}])'));
+console.log(balancedParentheses('()[(())]{)}'));
 
 // Exercise 15
 
