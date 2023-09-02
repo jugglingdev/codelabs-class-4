@@ -9,69 +9,90 @@
         
         // Exercise 1: Basic Function Creation
 
-        function greetUser() {
-            let userName = prompt("What's your name?");
-            
-            alert('Hey, ' + userName + '!');
-        }
+        console.groupCollapsed('EXERCISE 1:')
+        console.log('See alerts');
 
-        greetUser();
+            function greetUser() {
+                let userName = prompt("What's your name?");
+                
+                alert('Hey, ' + userName + '!');
+            }
+
+            greetUser();
+
+        console.groupEnd();
 
         // Exercise 2: Arrow Functions
 
-        let printMyName = name => console.log(name);
+        console.groupCollapsed('EXERCISE 2:')
 
-        printMyName('Kayla');
-        printMyName('Joe');
-        printMyName('Kelly');
+            let printMyName = name => console.log(name);
+
+            printMyName('Kayla');
+            printMyName('Joe');
+            printMyName('Kelly');
+
+        console.groupEnd();
 
         // Exercise 3: Calculations Using Arrow Functions
 
-        let calculateArea = (length, width) => console.log(length * width);
+        console.groupCollapsed('EXERCISE 3:')
 
-        calculateArea(2, 5);
+            let calculateArea = (length, width) => console.log(length * width);
+
+            calculateArea(2, 5);
+
+        console.groupEnd();
 
         // Exercise 4: Object Creation and Manipulation
 
-        let student = {
-            name: 'Jane Doe',
-            age: 17,
-            grade: 11,
+        console.groupCollapsed('EXERCISE 4:')
 
-            printStudentDetails() {
-                console.log(`${this.name} is ${this.age} years old and is in grade ${this.grade}.`);
+            let student = {
+                name: 'Jane Doe',
+                age: 17,
+                grade: 11,
+
+                printStudentDetails() {
+                    console.log(`${this.name} is ${this.age} years old and is in grade ${this.grade}.`);
+                }
             }
-        }
 
-        console.log(student);
-        student.printStudentDetails();
+            console.log(student);
+            student.printStudentDetails();
+
+        console.groupEnd();
 
         // Exercise 5: Advanced Object Methods
+        
+        console.groupCollapsed('EXERCISE 5:')
 
-        let library = {
-            books: [
-                'The Lord of the Rings',
-                'I Know Why the Caged Bird Sings',
-                "The Hitchhiker's Guide to the Galaxy",
-            ],
+            let library = {
+                books: [
+                    'The Lord of the Rings',
+                    'I Know Why the Caged Bird Sings',
+                    "The Hitchhiker's Guide to the Galaxy",
+                ],
 
-            addBook(bookName) {
-                library.books.push(bookName);
-            },
+                addBook(bookName) {
+                    library.books.push(bookName);
+                },
 
-            removeBook(bookName) {
-                let index = library.books.indexOf(bookName);
-                library.books.splice(index, 1);
+                removeBook(bookName) {
+                    let index = library.books.indexOf(bookName);
+                    library.books.splice(index, 1);
+                }
             }
-        }
 
-        console.log(library.books);
+            console.log(library.books);
 
-        library.addBook('Meaningful Work');
-        console.log(library.books);
+            library.addBook('Meaningful Work');
+            console.log(library.books);
 
-        library.removeBook('I Know Why the Caged Bird Sings');
-        console.log(library.books);
+            library.removeBook('I Know Why the Caged Bird Sings');
+            console.log(library.books);
+        
+        console.groupEnd();
 
     </script>
 </head>
