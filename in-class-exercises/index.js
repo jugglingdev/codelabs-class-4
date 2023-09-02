@@ -292,6 +292,16 @@ console.groupEnd();
 
 console.groupCollapsed('EXERCISE 17:');
 
+    function isPalindrome(word) {
+        word = word.toLowerCase();
+        
+        return word == word.split('').reverse().join('');
+    }
+
+    console.log(isPalindrome('racecar'));  // true
+    console.log(isPalindrome('Dad'));  // true
+    console.log(isPalindrome('banana'));  // false
+
 console.groupEnd();
 
 // Exercise 18
